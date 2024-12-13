@@ -1,0 +1,31 @@
+{% set processes = block.processes %}
+
+<section id="{{ settings.block_id }}" class="_module processes">
+  <div class="wrapper">
+      {% if processes | length %}
+        {% for process in processes %}
+            {% set title  = process.title %}
+            {% set text   = process.text %}
+            
+            <div class="processes__process">
+                <div class="top">
+                    <div class="title">
+                        <span>{{ "%02d"|format(loop.index) }}</span>
+                        <h4>{{ title }}</h4>
+                    </div>
+                    <div class="icon js-process-toggle">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p>{{ text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+      {% endif %}
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

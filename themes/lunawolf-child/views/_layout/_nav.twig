@@ -1,0 +1,17 @@
+<nav class="nav">
+  {% include "partials/menu.twig" with {
+    items: menu.get_items
+  } %}
+  {% if button %}
+    {% include "components/btn.twig" with {
+        class: "nav",
+        type: "neutral",
+        button
+    } %}
+  {% endif %}
+  <div class="nav__trigger js-menu-toggle">
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav__overlay"></div>
+</nav>

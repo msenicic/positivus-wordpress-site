@@ -1,0 +1,31 @@
+{% set logo   = header_settings.dark_logo %}
+{% set button = header_settings.button %}
+
+<header id="header" class="header">
+  <div class="wrapper">
+    <div class="container">
+      {% if logo %}
+        <div class="header__logo">
+          <a href="{{ homeUrl }}">
+           <img src="{{ get_image(logo) }}" />
+          </a>
+        </div>
+      {% endif %}
+      {% include '_layout/_nav.twig' with {
+        button
+      } %}
+      {% if button %}
+        {% include "components/btn.twig" with {
+            class: "header",
+            type: "neutral",
+            button
+        } %}
+      {% endif %}
+      <div class="header__trigger js-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,31 @@
+{% set pageHero = post.meta("page_hero" )%}
+
+{% set image       = pageHero.image %}
+{% set title       = pageHero.title %}
+{% set information = pageHero.information %}
+{% set button      = pageHero.button %}
+
+<section class="page-header">
+    <div class="wrapper">
+        <div class="container">
+            {% if title %}
+                <h1 class="page-header__title">{{ title }}</h1>
+            {% endif %}
+            {% if image %}
+                <div class="page-header__image">
+                    <img src="{{ get_image(image) }}" />
+                </div>
+            {% endif %}
+            {% if information %}
+                <p class="page-header__text">{{ information }}</p>
+            {% endif %}
+            {% if button %}
+                {% include "components/btn.twig" with {
+                    class: "page-header",
+                    type: "primary",
+                    button
+                } %}
+            {% endif %}
+        </div>
+    </div>
+</section>

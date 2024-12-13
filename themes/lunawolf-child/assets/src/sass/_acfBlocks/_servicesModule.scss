@@ -1,0 +1,179 @@
+.services {
+    margin-block: 40px 60px;
+
+    @include media-up(l) {
+        margin-block: 80px 140px;
+    }
+    
+    ._w {
+        margin-top: -30px;
+
+        @include media-up(m) {
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        @include media-up(l) {
+            margin-right: -20px;
+            margin-left: -20px;
+            margin-top: -40px;
+        }
+    }
+
+    &__service {
+        padding-top: 30px;
+
+        @include media-up(m) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        @include media-up(l) {
+            padding-right: 20px;
+            padding-left: 20px;
+            padding-top: 40px;
+        }
+
+        &__inner {
+            padding: 50px;
+            height: 100%;
+            box-shadow: 0 5px 0 0 $primary;
+            border-radius: 45px;
+            border: 1px solid $primary;
+            display: grid;
+            max-width: 600px;
+            margin: 0 auto;
+
+            &.big, .-preview & {
+                display: grid;
+                grid-template-columns: max-content auto minmax(0,210px);
+                gap: 93px 20px;
+
+                .text {
+                    display: block;
+                }
+                
+                .title { grid-area: 1 / 1 / 2 / 2; }
+
+                .image { 
+                    grid-area: 1 / 3 / 3 / 4;
+                    align-self: center;
+                }
+
+                .link { grid-area: 2 / 1 / 3 / 2; }
+            }
+
+            &.low {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: auto auto;
+                gap: 27px 0;
+                
+                .title { 
+                    grid-area: 1 / 1 / 2 / 4; 
+                }
+
+                .image {
+                    align-self: stretch;
+                    justify-self: end;
+                    grid-area: 2 / 3 / 3 / 4;
+                }
+
+                .link { 
+                    align-self: end;
+                    grid-area: 2 / 1 / 3 / 2; 
+                }
+
+                .text {
+                    display: none;
+                }
+            }
+
+            &.primary {
+                background-color: $primary;
+
+                h3 {
+                    background-color: $white;
+                }
+
+                a {
+                    color: $white;
+
+                    .icon {
+                        background-color: $white;
+                        color: $primary;
+                    }
+                }
+            }
+
+            &.secondary {
+                background-color: $secondary;
+
+                h3 {
+                    background-color: $white;
+                }
+
+                a {
+                    color: $black;
+
+                    .icon {
+                        background-color: $primary;
+                        color: $secondary;
+                    }
+                }
+            }
+
+            &.neutral {
+                background-color: $neutral;
+
+                h3 {
+                    background-color: $secondary;
+                }
+
+                a {
+                    color: $black;
+
+                    .icon {
+                        background-color: $primary;
+                        color: $secondary;
+                    }
+                }
+            }
+
+            .title {
+                h3 {
+                    width: fit-content;
+                    padding-inline: 7px;
+                    border-radius: 7px;
+    
+                    &:last-child {
+                        margin-top: -1px;
+                    }
+                }
+            }
+
+            .link {
+                width: fit-content;
+
+                a {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+
+                    .icon {
+                        width: 41px;
+                        height: 41px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        
+                        svg {
+                            transform: rotate(-30deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

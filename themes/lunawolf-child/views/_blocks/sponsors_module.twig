@@ -1,0 +1,20 @@
+{% set images = block.images %}
+
+<section id="{{ settings.block_id }}" class="_module sponsors">
+  <div class="wrapper">
+    {% if images | length %}
+      <div class="swiper sponsors__swiper">
+        <div class="swiper-wrapper">
+        {% for image in images %}
+          <div class="swiper-slide logo">
+            <img src="{{ get_image(image) }}" />
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

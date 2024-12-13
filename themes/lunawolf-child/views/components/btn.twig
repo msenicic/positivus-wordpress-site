@@ -1,0 +1,5 @@
+{% set target = button.target ? button.target : '_self' %}
+
+<div class="btn -{{type}} {{ class }}__button">
+    <a href="{{ button.url }}" target="{{ target }}">{{ button.title }}</a>
+</div>

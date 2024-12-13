@@ -1,0 +1,54 @@
+.btn {
+    width: 100%;
+
+    @include media-up(l) {
+        max-width: none;
+        width: fit-content;
+    }
+
+    a {
+        display: inline-block;
+        padding: 20px 35px;
+        border-radius: 14px;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    &.-primary a {
+        background-color: $primary;
+        color: $white;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: $secondary;
+            color: $black;
+            border: 1px solid $secondary;
+        }
+    }
+
+    &.-secondary a {
+        background-color: $secondary;
+        color: $black;
+        border: 1px solid $secondary;
+
+        &:hover {
+            background-color: transparent;
+            color: $white;
+            border: 1px solid $primary;
+        }
+    }
+
+    &.-neutral a {
+        background-color: transparent;
+        color: $black;
+        border: 1px solid $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            border: 1px solid $primary;
+        }
+    }
+}

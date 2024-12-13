@@ -1,0 +1,13 @@
+@import 'globalType.scss';
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $font;
+  color: $black;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: normal;
+}

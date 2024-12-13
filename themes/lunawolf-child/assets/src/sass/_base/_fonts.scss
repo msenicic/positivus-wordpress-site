@@ -1,0 +1,49 @@
+$font-path: '../../../assets/public/fonts/SpaceGrotesk';
+
+// Example
+//@font-face {
+//    font-family: 'Example';
+//    src: url('#{$font-path}/Example/Example-Bold.eot');
+//    src: url('#{$font-path}/Example/Example-Bold.eot?#iefix') format('embedded-opentype'),
+//    url('#{$font-path}/Example/Example-Bold.woff2') format('woff2'),
+//    url('#{$font-path}/Example/Example-Bold.woff') format('woff'),
+//    url('#{$font-path}/Example/Example-Bold.ttf') format('truetype'),
+//    url('#{$font-path}/Example/Example-Bold.svg#Example-Bold') format('svg');
+//    font-weight: bold;
+//    font-style: normal;
+//}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('#{$font-path}/SpaceGrotesk-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('#{$font-path}/SpaceGrotesk-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('#{$font-path}/SpaceGrotesk-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('#{$font-path}/SpaceGrotesk-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url('#{$font-path}/SpaceGrotesk-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}

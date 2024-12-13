@@ -1,0 +1,110 @@
+{
+    "key": "group_6650c8e0b88f7",
+    "title": "Social Media Settings",
+    "fields": [
+        {
+            "key": "field_6650c8e1d7064",
+            "label": "Social Media",
+            "name": "social_media",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_6650c99a1aaf1",
+            "button_label": "Add Social Media",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6650c99a1aaf1",
+                    "label": "Social Network",
+                    "name": "social_network",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "linkedin": "Linkedin",
+                        "facebook": "Facebook",
+                        "twitter": "Twitter"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 1,
+                    "other_choice": 0,
+                    "layout": "horizontal",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_6650c8e1d7064"
+                },
+                {
+                    "key": "field_6650ca1746d07",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6650c99a1aaf1",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "required_message": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_6650c8e1d7064"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "social-media-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1727728607
+}

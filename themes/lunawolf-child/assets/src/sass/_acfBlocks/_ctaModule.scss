@@ -1,0 +1,71 @@
+.cta {
+    padding-block: 25px;
+    margin-block: 70px 60px;
+
+    @include media-up(l) {
+        margin-block: 100px 140px;
+    }
+
+    .container {
+        background-color: $neutral;
+        border-radius: 45px;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 50px;
+
+        @include media-up(l) {
+            padding: 60px;
+        }
+    }
+
+    &__left {
+        @include media-up(m) {
+            flex: 0 0 50%;
+            max-width: 500px;
+        }
+
+        p {
+            margin-block: 20px;
+
+            @include media-up(l) {
+                margin-block: 26px;
+            }
+        }
+
+        &__button {
+            @include media-up(m) {
+                width: fit-content;
+            }
+        }
+    }
+
+    &__right {
+        display: none;
+
+        @include media-up(m) {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex: 0 0 50%;
+            max-width: 50%;
+            position: relative;
+        }
+
+        @include media-up(l) {
+            justify-content: center;
+        }
+
+        img {
+            width: auto;
+            position: absolute;
+            max-height: calc(100% + 100px + 50px);
+            object-fit: cover;
+
+            @include media-up(l) {
+                max-height: calc(100% + 120px + 50px);
+            }
+        }
+    }
+}

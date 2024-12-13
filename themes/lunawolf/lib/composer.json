@@ -1,0 +1,40 @@
+{
+  "name": "roots/bedrock",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+  "homepage": "https://roots.io/bedrock/",
+  "authors": [
+    {
+      "email": "jared@upstatement.com",
+      "name": "jarednova"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "timber/timber": "2.x-dev"
+  },
+  "require-dev": {
+    "automattic/wordbless": "^0.4.2",
+    "yoast/wp-test-utils": "^1.0"
+  },
+  "extra": {
+    "installer-paths": {
+
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "roots/wordpress-core-installer": true,
+      "composer/installers": true
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  }
+}

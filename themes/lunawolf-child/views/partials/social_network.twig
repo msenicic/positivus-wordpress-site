@@ -1,0 +1,18 @@
+{% set socials = social_media %}
+
+{% if socials | length %}
+    <div class="socials">
+    {% for social in socials %}
+        {% set network = social.social_network %}
+        {% set url     = social.url %}
+        
+        <div class="socials__social">
+            <a href="{{ url }}" target="_blank">
+                {% include 'icons/' ~ network ~'.twig' %}
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+
+

@@ -1,0 +1,29 @@
+.sponsors {
+    margin-block: 40px 60px;
+
+    @include media-up(l) {
+        margin-block: 80px 140px;
+    }
+    
+    &__swiper {
+        width: 100%;
+        height: 100%;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: auto;
+                height: 48px;
+                filter: grayscale(100%);
+            }
+        }
+    }
+}
+
+.-preview .swiper-wrapper{
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,163 @@
+{
+    "key": "group_666effa403aca",
+    "title": "Block Settings",
+    "fields": [
+        {
+            "key": "field_666effa429fa4",
+            "label": "Information",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Add custom spacing, block ID or Dark Mode.\r\nLeave empty for default values.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_666effc629fa5",
+            "label": "Spacing Top",
+            "name": "spacing_top",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_666effde29fa6",
+            "label": "Spacing Bot",
+            "name": "spacing_bot",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_66978284c28aa",
+            "label": "Padding Top",
+            "name": "padding_top",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_66978292c28ab",
+            "label": "Padding Bot",
+            "name": "padding_bot",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": "",
+            "placeholder": "",
+            "step": 5,
+            "prepend": "",
+            "append": "px"
+        },
+        {
+            "key": "field_666effe429fa7",
+            "label": "Block ID",
+            "name": "block_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1728498653
+}

@@ -1,0 +1,54 @@
+.subscription {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #292A32;
+    padding: 30px;
+    border-radius: 14px;
+
+    @include media-up(l) {
+        padding: 58px 40px;
+    }
+
+    input {
+        flex: 1;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        color: $white;
+        border: 1px solid $white;
+        padding: 21px 25px;
+        border-radius: 14px;
+        background-color: transparent;
+        outline: none;
+
+        @include media-up(l) {
+            font-size: 1.8rem;
+            line-height: normal;
+        }
+    }
+
+    button {
+        width: 100%;
+        padding: 20px 35px;
+        border-radius: 14px;
+        transition: 0.5s;
+        background-color: $secondary;
+        color: $black;
+        border: 1px solid $secondary;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            border: 1px solid $primary;
+        }
+
+        @include media-up(l) {
+            width: fit-content;
+        }
+    }
+}

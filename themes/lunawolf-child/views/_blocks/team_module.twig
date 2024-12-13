@@ -1,0 +1,52 @@
+{% set isFullTeam = block.full_team %}
+{% set link       = isFullTeam ? null : block.link_to_full_team %}
+{% set employees  = isFullTeam ? get_your_posts('employee') : block.employees %}
+
+<section id="{{ settings.block_id }}" class="_module team">
+  <div class="wrapper">
+    {% if employees | length %}
+        <div class="_w">
+        {% for employee in employees %}
+            {% set image      = employee.profile_image %}
+            {% set name       = employee.full_name %}
+            {% set position   = employee.position %}
+            {% set experience = employee.experience %}
+            {% set linkedin   = employee.linkedin_profile %}
+            
+            <div class="team__employee _m6 _l4">
+                <div class="team__employee__inner">
+                    <div class="top">
+                        <div class="top__image">
+                            <img src="{{ get_image(image) }}" />
+                            {% include 'icons/vector.twig' %}
+                        </div>
+                        <div class="top__profile">
+                            <h4>{{ name }}</h4>
+                            <p>{{ position }}</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <p>{{ experience }}</p>
+                    </div>
+                    <div class="link">
+                        <a href="{{ linkedin }}" target="_blank">
+                            {% include 'icons/linkedin.twig' %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% if link %}
+        {% include "components/btn.twig" with {
+            class: "team",
+            type: "primary",
+            button: link
+        } %}
+    {% endif %}
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

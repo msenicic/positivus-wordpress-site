@@ -1,0 +1,35 @@
+{% set logo     = footer_settings.light_logo %}
+{% set contact  = footer_settings.contact_information %}
+{% set designBy = footer_settings.design_by_text %}
+{% set policy   = footer_settings.privacy_policy %}
+
+<footer id="footer" class="footer">
+  <div class="wrapper">
+    <div class="container">
+      <div class="footer__top">
+        {% if logo %}
+          <div class="footer__top__logo">
+            <a href="{{ homeUrl }}">
+              <img src="{{ get_image(logo) }}" />
+            </a>
+          </div>
+        {% endif %}
+        {% include "partials/menu.twig" with {
+          items: menu.get_items
+        } %}
+        {% if contact %}
+          <div class="footer__top__contact">
+            <h4>Contact us:</h4>
+            {{ contact }}
+          </div>
+        {% endif %}
+        {% include "components/forms/subscription.twig" %}
+        {% include "partials/social_network.twig" %}
+      </div>
+      <div class="footer__bottom">
+        <p>© {{ "now"|date("Y") }} {{ designBy }}</p>
+        <a href="{{ policy.url }}" target="{{ policy.target ? policy.target : '_self' }}">{{ policy.title }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

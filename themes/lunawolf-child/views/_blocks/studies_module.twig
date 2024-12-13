@@ -1,0 +1,26 @@
+{% set studies = block.studies %}
+
+<section id="{{ settings.block_id }}" class="_module studies">
+  <div class="wrapper">
+    {% if studies | length %}
+        <div class="swiper studies__swiper">
+            <div class="swiper-wrapper">
+            {% for study in studies %}
+                {% set post = get_your_post(study.post) %}
+                
+                <div class="swiper-slide studies__study">
+                    <p>{{ post.excerpt.read_more(false) }}</p>
+                    <a href="{{ post.link }}" class="link">
+                        <span class="text">Learn more</span>
+                        <span class="icon">{% include 'icons/arrow.twig' %}</span> 
+                    </a>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

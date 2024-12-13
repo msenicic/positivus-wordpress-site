@@ -1,0 +1,10 @@
+{% set bodyClass = 't-home' %}
+
+{% extends "_layout/base.twig" %}
+
+{% block content %}
+	<div class="content">
+    {% include '_headers/pageHeader.twig' %}
+    {{ content }}
+  </div>
+{% endblock %}

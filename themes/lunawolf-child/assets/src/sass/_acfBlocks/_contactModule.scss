@@ -1,0 +1,205 @@
+.contact {
+    margin-block: 40px 60px;
+
+    @include media-up(l) {
+        margin-block: 80px 140px;
+    }
+
+    .container {
+        background-color: $neutral;
+        border-radius: 45px;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+
+        @include media-up(l) {
+            padding: 60px 100px 80px 100px;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 556px;
+        margin: 0 auto;
+        display: none;
+
+        @include media-up(l) {
+            margin: 0;
+        }
+
+        &.-active {
+            display: block;
+            z-index: 2;
+        }
+
+        input[type]:not([type=hidden]):not([type=submit]), textarea {
+            width: 100%;
+            padding: 18px 20px;
+            border: 1px solid $black;
+            outline: none; 
+            border-radius: 14px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+
+            .-preview & {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            @include media-up(l) {
+                font-size: 1.8rem;
+                line-height: normal;
+                margin-bottom: 25px;
+                margin-top: 5px;
+
+                .-preview & {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        textarea {
+            resize: none;
+            max-height: 130px;
+            margin-bottom: 40px;
+        }
+
+        label {
+            font-size: 1.4rem;
+            line-height: normal;
+
+            .-preview & {
+                font-size: 14px;
+            }
+
+            @include media-up(l) {
+                font-size: 1.6rem;
+                line-height: 2.8rem;
+
+                .-preview & {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+        }
+
+        .submit {
+            width: 100%;
+            padding: 20px 35px;
+            border-radius: 14px;
+            transition: 0.5s;
+            background-color: $primary;
+            color: $white;
+            border: 1px solid $primary;
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+            cursor: pointer;
+
+            .-preview & {
+                font-size: 20px;
+                line-height: 28px;
+            }
+    
+            &:hover {
+                background-color: $secondary;
+                color: $black;
+                border: 1px solid $secondary;
+            }
+        }
+
+        .wpcf7-response-output {
+            margin: 0 !important;
+            padding: 5px 10px !important;
+            border-width: 1px;
+            border-radius: 14px;
+            text-align: center;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+        width: 100%;
+        max-width: 556px;
+        margin: 0 auto;
+
+        @include media-up(l) {
+            margin: 0;
+            justify-content: flex-start;
+        }
+
+        .radio {
+            input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+
+                + .radio-label {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    font-size: 1.6rem;
+                    line-height: normal;
+
+                    .-preview & {
+                        font-size: 16px;
+                    }
+
+                    @include media-up(l) {
+                        font-size: 1.8rem;
+
+                        .-preview & {
+                            font-size: 18px;
+                        }
+                    }
+                    
+                    &:before {
+                        content: '';
+                        background: $white;
+                        border-radius: 100%;
+                        border: 1px solid $black;
+                        display: inline-block;
+                        width: 28px;
+                        height: 28px;
+                        position: relative;
+                        cursor: pointer; 
+                        transition: all 250ms ease;
+                    }
+                }
+
+                &:checked {
+                    + .radio-label {
+                        &:before {
+                            background-color: $secondary;
+                            box-shadow: inset 0 0 0 5px $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__image {
+        display: none;
+        width: auto;
+        position: absolute;
+        height: 80%;
+        object-fit: cover;
+        right: 0;
+        top: 50%;
+        transform: translate(50%,-50%);
+        z-index: 0;
+
+        @include media-up(m) {
+            display: block;
+        }
+    }
+}

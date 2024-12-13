@@ -1,0 +1,37 @@
+{% set services = block.services %}
+
+<section id="{{ settings.block_id }}" class="_module services">
+  <div class="wrapper">
+    <div class="_w">
+      {% if services | length %}
+        {% for service in services %}
+            {% set bgColor   = service.bg_color %}
+            {% set post      = get_your_post(service.post) %}
+            {% set firstRow  = service.first_row %}
+            {% set secondRow = service.second_row %}
+            
+            <div class="services__service _m6">
+                <div class="services__service__inner {{ bgColor }}">
+                    <div class="title">
+                        <h3>{{ firstRow }}</h3>
+                        <h3>{{ secondRow }}</h3>
+                    </div>
+                    <div class="image">
+                        <img src="{{ post.thumbnail.src }}" />
+                    </div>
+                    <div class="link">
+                        <a href="{{ post.link }}">
+                            <span class="icon">{% include 'icons/arrow.twig' %}</span> 
+                            <span class="text">Learn more</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

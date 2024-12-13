@@ -1,0 +1,40 @@
+{% set testimonials = block.testimonials %}
+
+<section id="{{ settings.block_id }}" class="_module testimonials">
+  <div class="wrapper">
+    {% if testimonials | length %}
+        <div class="swiper testimonials__swiper">
+            <div class="swiper-wrapper">
+            {% for testimony in testimonials %}
+                {% set name     = testimony.full_name %}
+                {% set position = testimony.position %}
+                {% set company  = testimony.company %}
+                {% set message  = testimony.message %}
+                
+                <div class="swiper-slide testimonials__testimony">
+                    <div class="message">
+                        <p>"{{ message }}"</p>
+                    </div>
+                    <div class="profile">
+                        <h4>{{ name }}</h4>
+                        <p>{{ position }} at {{ company }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="options">
+                <div class="swiper-button-prev option">
+                    {% include 'icons/arrow.twig' %}
+                </div>
+                <div class="swiper-pagination option"></div>
+                <div class="swiper-button-next option">
+                    {% include 'icons/arrow.twig' %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

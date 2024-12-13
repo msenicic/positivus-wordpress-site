@@ -1,0 +1,61 @@
+// CSS Variables
+// :root {
+
+// }
+
+$black:       #000;
+$white:       #fff;
+$green:       #00230f;
+$green-light: #dae0dc;
+$light:       #f5f5f5;
+$dark-gray:   #cacaca;
+
+$neutral: #f3f3f3;
+$primary: #191a23;
+$secondary: #b9ff66;
+
+$narrow-width: 857px;
+
+// Typography
+$font: SpaceGrotesk;
+
+// Grid breakpoints
+$grid-breakpoints: (
+        _: 0,
+        xs: 390px,
+        s: 576px,
+        m: 768px,
+        l: 1024px,
+        xl: 1366px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
+@include _assert-starts-at-zero($grid-breakpoints);
+
+// Define the maximum width of `.wrapper` for different screen sizes.
+$wrapper-max-widths: (
+        l: 1280px
+) !default;
+
+@include _assert-ascending($wrapper-max-widths, '$wrapper-max-widths');
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:                12 !default;
+$grid-gutter-width-mobile:    16px !default;
+$grid-gutter-width-tablet:    16px !default;
+$grid-gutter-width:           20px !default;
+
+// Options
+$enable-grid-classes:       true !default;
+$enable-print-styles:       false !default;
+
+// Printing
+$print-page-size:             a3 !default;
+$print-body-min-width:        map-get($grid-breakpoints, 'l') !default;
+
+$mobile-landscape-width: 667px;
+$mobile-landscape-height: 500px;
+
+$narrow-laptop-width: 992px;
+$narrow-laptop-height: 750px;

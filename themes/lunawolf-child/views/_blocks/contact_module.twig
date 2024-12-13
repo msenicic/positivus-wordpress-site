@@ -1,0 +1,28 @@
+{% set image  = block.image %}
+
+<section id="{{ settings.block_id }}" class="_module contact">
+  <div class="wrapper">
+    <div class="container">
+        <div class="contact__buttons">
+            <div class="radio">
+                <input id="radio-1" name="form-toggle" type="radio" value="form1" checked>
+                <label for="radio-1" class="radio-label">Say Hi</label>
+            </div>
+            <div class="radio">
+                <input id="radio-2" name="form-toggle" type="radio" value="form2">
+                <label for="radio-2" class="radio-label">Get a Quote</label>
+            </div>
+        </div>
+        <div id="form1" class="contact__form -active">
+            {{ function('do_shortcode', '[contact-form-7 id="533237e" title="Contact Form"]') }}
+        </div>
+        <div id="form2" class="contact__form">
+            {{ function('do_shortcode', '[contact-form-7 id="fc3b3bd" title="Quote Form"]') }}
+        </div>
+        <img class="contact__image" src="{{ get_image(image) }}" />
+    </div>
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

@@ -1,0 +1,181 @@
+.processes {
+    margin-block: 40px 60px;
+
+    @include media-up(l) {
+        margin-block: 80px 140px;
+    }
+    
+    &__process {
+        background-color: $neutral;
+        padding: 30px;
+        border-radius: 45px;
+        border: 1px solid $primary;
+        box-shadow: 0 5px 0 0 $primary;
+        transition: 0.5s;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+
+            @include media-up(l) {
+                margin-bottom: 30px;
+            }
+        }
+
+        @include media-up(l) {
+            padding: 41px 60px;
+        }
+
+        &.active {
+            background-color: $secondary;
+
+            .top {
+                padding-bottom: 20px;
+
+                @include media-up(l) {
+                    padding-bottom: 30px;
+                }
+
+                &::before {
+                    transform: scaleX(1);
+                }
+
+                .icon span {
+                    &:nth-child(1) {
+                        opacity: 0;
+                    }
+
+                    &:nth-child(2) {
+                        transform: translate(-50%, -50%) rotate(0deg);
+                    }
+                }
+            }
+
+            .bottom {
+                grid-template-rows: 1fr;
+                margin-top: 20px;
+
+                @include media-up(l) {
+                    margin-top: 30px;
+                }
+            }
+        }
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-bottom: 0;
+            transition: 0.5s;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $black;
+                transform: scaleX(0);
+                transform-origin: center;
+                transition: transform 0.5s;
+            }
+            
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+
+                @include media-up(xs) {
+                    gap: 33px;
+                }
+
+                @include media-up(l) {
+                    gap: 25px;
+
+                    h4 {
+                        font-size: 3rem;
+
+                        .-preview & {
+                            font-size: 30px; 
+                        }
+                    }
+                }
+
+                span {
+                    font-size: 3rem;
+                    line-height: normal;
+                    font-weight: 500;
+
+                    .-preview & {
+                       font-size: 30px; 
+                    }
+
+                    @include media-up(l) {
+                        font-size: 6rem;
+
+                        .-preview & {
+                            font-size: 60px; 
+                        }
+                    }
+                }
+            }
+
+            .icon {
+                width: 30px;
+                height: 30px;
+                border: 1px solid $primary;
+                border-radius: 50%;
+                background-color: $neutral;
+                position: relative;
+                flex-shrink: 0;
+                cursor: pointer;
+
+                @include media-up(l) {
+                    width: 58px;
+                    height: 58px;
+                }
+
+                span {
+                    height: 3px;
+                    background-color: $black;
+                    width: 50%;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transition: 0.5s;
+
+                    @include media-up(l) {
+                        height: 6px;
+                    }
+        
+                    &:nth-child(1) {
+                        transform: translate(-50%, -50%) rotate(0deg);
+                    }
+        
+                    &:nth-child(2) {
+                        transform: translate(-50%, -50%) rotate(90deg);
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-rows: 0fr;
+            margin-top: 0;
+            transition: 0.5s;
+
+            p {
+                overflow: hidden;
+
+                .-preview & {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

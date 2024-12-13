@@ -1,0 +1,38 @@
+.heading {
+    margin-block: 40px;
+
+    @include media-up(l) {
+        margin-block: 80px;
+    }
+
+    .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        
+        @include media-up(l) {
+            text-align: left;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        @include media-down(l) {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+
+    &__title {
+        background-color: $secondary;
+        padding-inline: 7px;
+        border-radius: 7px;
+    }
+
+    &__subtitle br {
+        @include media-down(l) {
+            display: none;
+        }
+    }
+}

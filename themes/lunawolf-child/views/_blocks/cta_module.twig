@@ -1,0 +1,32 @@
+{% set title  = block.title %}
+{% set text   = block.text %}
+{% set button = block.button %}
+{% set image  = block.image %}
+
+<section id="{{ settings.block_id }}" class="_module cta">
+  <div class="wrapper">
+    <div class="container">
+        <div class="cta__left">
+            {% if title %}
+                <h3>{{ title }}</h3>
+            {% endif %}
+            {% if text %}
+                <p>{{ text }}</p>
+            {% endif %}
+            {% if button %}
+                {% include "components/btn.twig" with {
+                    class: "cta__left",
+                    type: "primary",
+                    button
+                } %}
+            {% endif %}
+        </div>  
+        <div class="cta__right">
+            <img src="{{ get_image(image) }}" />
+        </div>
+    </div>
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

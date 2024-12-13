@@ -1,0 +1,11 @@
+{% set bodyClass = 't-page t-post' %}
+
+{% extends "_layout/base.twig" %}
+
+{% block content %}
+	<div class="content">
+    <div class="wrapper">
+      {{ post.content }}
+    </div>
+  </div>
+{% endblock %}

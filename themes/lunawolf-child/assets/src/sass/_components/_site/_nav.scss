@@ -1,0 +1,118 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    @include media-down(l) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: calc(var(--vh, 1vh) * 100);
+      background-color: #fff;
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      transform: translateX(-100%);
+      transition: 0.5s;
+      padding: 20px;
+  
+      &.active {
+        z-index: 1001;
+        box-shadow: 0 0 0 100vw #000000cc;
+        transform: translateX(0);
+
+        .nav__overlay {
+            display: block;
+        }
+      }
+    }
+
+    &__overlay {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -50%;
+        display: none;
+        z-index: 1002;
+    }
+  
+    &__trigger {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    
+        @include media-up(l)  {
+            display: none;
+        }
+
+        span {
+            height: 5px;
+            background-color: $black;
+            border-radius: 100px;
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 50%;
+
+            &:nth-child(1) {
+                transform: translateY(-50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+    }
+  
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      @include media-down(l) {
+        flex-direction: column;
+      }
+  
+      li {
+        margin-right: 20px;
+
+        @media only screen and (min-width: 1150px) {
+            margin-right: 40px;
+        }
+  
+        @include media-down(l) {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        a {
+            @include media-down(l) {
+                font-size: 2.8rem;
+                line-height: normal;
+            }
+        }
+      }
+    }
+
+    &__button {
+        width: fit-content;
+
+        @include media-down(m) {
+            a {
+                padding: 15px 22px;
+            }
+        }
+
+        @include media-up(m) {
+            display: none;
+        }
+    }
+  }

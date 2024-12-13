@@ -1,0 +1,18 @@
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &__social {
+        a {
+            display: flex;
+            align-items: center;
+
+            svg {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    }
+}

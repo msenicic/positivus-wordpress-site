@@ -1,0 +1,18 @@
+{% set title    = block.title %}
+{% set subtitle = block.subtitle %}
+
+<section id="{{ settings.block_id }}" class="_module heading">
+  <div class="wrapper">
+    <div class="container">
+      {% if title %}
+        <h2 class="heading__title">{{ title }}</h2>
+      {% endif %}
+      {% if subtitle %}
+        <p class="heading__subtitle">{{ subtitle }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>

@@ -1,0 +1,56 @@
+.studies {
+    margin-block: 40px 60px;
+
+    @include media-up(l) {
+        margin-block: 80px 140px;
+    }
+    
+    &__swiper {
+        overflow: visible;
+
+        @include media-up(l) {
+            background-color: $primary;
+            border-radius: 45px;
+            overflow: hidden;
+            padding-block: 70px;
+        }
+    }
+
+    &__study {
+        padding: 42px 50px;
+        background-color: $primary;
+        border-radius: 45px;
+        color: $white;
+        max-width: 350px;
+        height: auto;
+
+        @include media-up(l) {
+            max-width: none;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            padding-inline: 64px;
+
+            &:not(:last-child) {
+                border-right: 1px solid $white;
+            }
+        }
+
+        .link {
+            margin-top: 20px;
+            color: $secondary;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .icon {
+                display: flex;
+                align-items: center;
+
+                svg {
+                    transform: rotate(-30deg);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{# settings.dark_mode #}
+{# settings.full_width_content #}
+
+{% set field = block.field %}
+
+
+<section id="{{ settings.block_id }}" class="_module example">
+  <div class="wrapper">
+    <div class="container">
+      
+    </div>
+  </div>
+  {% if not is_preview %}
+    {{ settings.styles | raw }}
+  {% endif %}
+</section>
